@@ -1,0 +1,128 @@
+
+
+
+.container {
+    display: block;
+    float: left;
+    padding: 100px 5%;
+}
+
+
+.match_img {
+    width: 25%;
+    height: 35%;
+    float: left;
+    display: inline-block;
+}
+
+.matchName {
+    width:50%;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 30px;
+    margin-left: 20%;
+    
+}
+
+.addALikeBtn {
+    float: left;
+    display: inline-block;
+    margin-left: 10%;
+    margin-top: 100px;
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    padding: .67em .67em;
+    cursor: pointer;
+    width: 11%;
+    height: 20%;
+}
+
+.disLikeBtn {
+    float: left;
+    display: inline-block;
+    margin-left: 10%;
+    margin-top: 100px;
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    padding: .67em .67em;
+    cursor: pointer;
+    width: 11%;
+    height: 20%;
+}
+
+.matchDescription {
+    width: 50%;
+    display: inline-block;
+    border-style: solid;
+    margin-top: 80px;
+    font-family: sans-serif;
+    margin-left: 10px; 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS til øvre navigationsmenu */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #5d4954;
+}
+
+.logo {
+    color: rgb(226, 226, 226);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: rgb(226, 226, 226);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+

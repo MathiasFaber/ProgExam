@@ -1,0 +1,171 @@
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+#errorMessages {
+    color: red;
+    font-size: 80%;
+    padding: 20px;
+}
+
+#signInButton {
+    width: 30%;
+    height: 25%;
+    margin: auto;
+}
+
+#sign-up{
+    text-align: center;
+}
+
+.registerbtn {
+    background-color: rgb(66, 65, 65);
+    color: white;
+    padding: 5px 10px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+#signUpButton {
+    width: 30%;
+    height: 25%;
+    margin: auto;
+}
+
+img{
+        padding: 100px;
+        width: 80%;
+        display: block;
+        margin-left: auto; 
+        margin-right: auto;
+}
+
+h1 {
+    color: #111; 
+    font-family: 'Helvetica Neue', sans-serif; 
+    font-size: 100px; 
+    font-weight: bold; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+    text-align: center; 
+}
+
+/* opret burger */
+.container {
+    padding: 30 px;
+    background-color: white;
+    margin-left: auto; 
+    margin-right: auto;
+    max-width: 500px;
+}
+
+/* login burger */
+.logincontainer {
+    padding: 30 px;
+    background-color: white;
+    margin-left: auto; 
+    margin-right: auto;
+    max-width: 500px;
+}
+
+
+
+h1 {
+    text-align: center;
+    font-size: 17px;
+}
+
+h2 {
+    font-size: 16px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 16px;
+    text-align: center;
+}
+
+
+
+/* userProfile
+
+/* deler siden op i to - det står på samme linje */
+.userandorder{
+    display: flex;
+}
+
+/* Input fields */
+input[type=text] {
+    width: 80%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+/* user information */
+.userinformation{
+    flex: 1;
+    display: inline-block;
+    width: 50%;
+}
+
+/*ordrerdata */
+#matchHistory{
+    flex: 1;
+}
+
+
+
+
+
+
+
+/* CSS til øvre navigationsmenu */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #5d4954;
+}
+
+.logo {
+    color: rgb(226, 226, 226);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: rgb(226, 226, 226);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}

@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="styles.css" rel="stylesheet">
+    <title>Dating App</title>
+
+
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="userProfile.html" > <h4>Dating</h4></a>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="signIn.html">Login</a> 
+            </li>
+            <li>
+                <a href="signUp.html">Create User</a> 
+            </li>
+            <li>
+                <a href="userProfile.html">My Profil</a> 
+            </li>
+            <li>
+                <a href="matches.html">Matches</a> 
+            </li>
+            <li>
+                <a href="myMatches.html">My Matches</a> 
+            </li>
+    
+        </ul>
+       
+    </nav>
+
+
+
+    <form name="signUpForm" method="post">
+        <div id = "sign-up">
+    
+        <div id="errorMessages">
+            <div id="usernameErr" > </div>
+            <div id="emailErr"></div>
+            <div id="phoneErr"></div>
+            <div id="cityErr"></div>
+            <div id="zipErr"></div>
+            <div id="addressErr"></div>
+            <div id="passwordErr" ></div>
+        </div>
+            <br>
+            <p>Username</p>
+    
+            <input type="text" id="username" value="" placeholder="Name">
+            <br/>
+    
+            <br/>
+            <p>Phone</p>
+            <input type="text" id="phone" value="" placeholder="Phone number">
+            <br/>
+            <br/>
+    
+            <p>City</p>
+            <input type="text" id="city" value="" placeholder="City">
+            <br/>
+            <br/>
+    
+            <p>Zip</p>
+            <input type="text" id="zip" maxlength="4" value="" placeholder="Zip code">
+            <br/>
+            <br/>
+    
+    
+    
+            <p>Address</p>
+            <input type="text" id="address" value="" placeholder="Address">
+            <br/>
+            <br/>
+    
+    
+            <p>E-mail</p>
+            <input type="text" name="email" id="email" value="" placeholder="E-mail" />
+            <br/>
+            <br>
+    
+    
+    
+            <p>Password</p>
+        <input type="text" id="password" value="" placeholder="Password">
+        <br>
+        <br>
+
+        <div id="Gender"> 
+        <p>Gender</p> 
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+        </div>
+            <br>
+            <br/>
+        <div id ="partnerGender"> 
+        <p>Partners gender</p>
+            <input type="radio" id="male" name="partnerGender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="partnerGender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="both" name="partnerGender" value="both">
+            <label for="other">Both</label>
+        </div>
+        <br>
+        <br/>
+
+
+        <div id="signUpButton">
+            <button  id="create" onclick="validateForm()" type="button"> Submit </button>
+            <!-- Brug evt id istedet for onclick? onclick="validateForm()" -->
+            </div>
+    <br>
+    
+        <div class="sign-in">
+            <p>Already have an account? <a href="SignIn.html">Sign in</a>.</p>
+    
+        </div>
+    
+    </div>
+    </form>
+    
+    
+    </body>
+
+    <script src="../controller/script.js"></script>
+    <script src="../model/signUp_signIn/validation.js"></script>
+
+    </html>
+    
+
+

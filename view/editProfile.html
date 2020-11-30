@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="styles.css" rel="stylesheet">
+    <title>Dating App</title>
+
+
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="userProfile.html" > <h4>Dating</h4></a>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="signIn.html">Login</a> 
+            </li>
+            <li>
+                <a href="signUp.html">Create User</a> 
+            </li>
+            <li>
+                <a href="userProfile.html">My Profil</a> 
+            </li>
+            <li>
+                <a href="matches.html">Matches</a> 
+            </li>
+            <li>
+                <a href="myMatches.html">My Matches</a> 
+            </li>
+    
+        </ul>
+
+    </nav>
+
+<!-- bruger oplysninger -->
+<h1> Edit my Account </h1>
+
+<form name="editForm" method="post">
+    <div id = "sign-up">
+
+        <br>
+        <p>Username</p>
+
+        <input type="text" id="editUsername" value="" placeholder="Name">
+        <br/>
+
+        <br/>
+        <p>Phone</p>
+        <input type="text" id="editPhone" value="" placeholder="Phone number">
+        <br/>
+        <br/>
+
+        <p>City</p>
+        <input type="text" id="newCity" value="" placeholder="City">
+        <br/>
+        <br/>
+
+        <p>Zip</p>
+        <input type="text" id="newZip" maxlength="4" value="" placeholder="Zip code">
+        <br/>
+        <br/>
+
+
+
+        <p>Address</p>
+        <input type="text" id="newAddress" value="" placeholder="Address">
+        <br/>
+        <br/>
+
+
+        <p>E-mail</p>
+        <input type="text" name="email" id="newEmail" value="" placeholder="E-mail" />
+        <br/>
+        <br>
+
+
+
+        <p>Password</p>
+    <input type="text" id="newPassword" value="" placeholder="Password">
+    <br>
+    <br>
+
+
+   <div id="signUpButton">
+    <button id="editBtn" type="button" class="registerbtn" > Submit </button>
+    </div>
+<br>
+
+   
+
+</div>
+</form>
+
+<!-- linker til JavaScript filerne -->
+<script src="../model/myProfile/editProfile.js"> </script>
+
+
+
+</body>
+</html>

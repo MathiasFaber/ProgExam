@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="styles.css" rel="stylesheet">
+    <title>Dating App</title>
+
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="userProfile.html" > <h4>Dating</h4></a>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="signIn.html">Login</a> 
+            </li>
+            <li>
+                <a href="signUp.html">Create User</a> 
+            </li>
+            <li>
+                <a href="userProfile.html">My Profil</a> 
+            </li>
+            <li>
+                <a href="matches.html">Matches</a> 
+            </li>
+            <li>
+                <a href="myMatches.html">My Matches</a> 
+            </li>
+    
+        </ul>
+    </nav>
+
+    <h2> Sign in to your profile </h2>
+    <br/>
+    
+    <!-- log in form, to fill out password and username -->
+    <!-- dette er kopieret, lav om i det :)) -->
+    <form >
+        <div id="sign-in">
+    
+            Name
+            <br/>
+            <input type="text" id= "username" value ="" placeholder="Your name" />
+            <br/>
+    
+            <br/>
+            Password
+            <br/>
+    
+            <input type="text" id="password" value="" placeholder="Your password"/>
+            <br/>
+    
+        </div>
+    
+        <div id="signUpButton">
+            <button onclick="signIn()" type="button"> Submit </button>
+            <!-- Brug evt id istedet for onclick? onclick="validateForm()" -->
+            </div>
+    
+    </form>
+    
+    </body>
+    
+  <!-- <script src="../User/ClassUser.js"></script>  --> 
+    <script src="../model/signUp_signIn/signIn.js"></script>
+    <script src="../model/signUp_signIn/validation.js"></script>
+    
+    
+    </html>

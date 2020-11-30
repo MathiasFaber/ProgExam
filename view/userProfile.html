@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="styles.css" rel="stylesheet">
+    <title>Dating App</title>
+
+
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="userProfile.html" > <h4>Dating</h4></a>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="signIn.html">Login</a> 
+            </li>
+            <li>
+                <a href="signUp.html">Create User</a> 
+            </li>
+            <li>
+                <a href="userProfile.html">My Profil</a> 
+            </li>
+            <li>
+                <a href="matches.html">Matches</a> 
+            </li>
+            <li>
+                <a href="myMatches.html">My Matches</a> 
+    
+        </ul>
+
+    </nav>
+
+<!-- bruger oplysninger -->
+<h1> My Account </h1>
+
+<p>
+    <a href="editProfile.html">Edit Profile</a>
+</p>
+
+<div class = "user">
+    <div class="userinformation">
+        <h2> User Information</h2>
+        <br/>
+        <br/>
+
+        Username
+        <br/>
+        <input  type="text" id="username" value="" readonly >
+        <br/>
+
+        <br/>
+        Phone
+        <br/>
+        <input type="text" id="phone" value="" readonly >
+        <br/>
+        <br/>
+
+        City
+        <br/>
+        <input type="text" id="city" value="" readonly >
+        <br/>
+        <br/>
+
+        Zip
+        <br/>
+        <input type="text" id="zip" value="" readonly >
+        <br/>
+        <br/>
+
+        Address
+        <br/>
+        <input type="text" id="address" value="" readonly >
+        <br/>
+        <br/>
+
+        E-mail
+        <br/>
+        <input type="text" id="email" value="" readonly >
+        <br/>
+
+        Password
+        <br/>
+        <input type="text" value="*********" readonly >
+        <br/>
+    </div>
+
+<!-- ordredata -->
+    <div id="matchHistory">
+        <h3> Matches </h3>
+        <br/>
+
+    </div>
+</div>
+
+<div class="delete-account">
+    <button id="deleteBtn" class="btn-delete" type="button">Delete your account</button>
+</div>
+
+<div id="logOutButton">
+    <button id="logOutBtn" type="button" class="logOutbtn" > Log Out </button>
+    </div>
+
+
+<!-- linker til JavaScript filerne -->
+<script src="../model/myProfile/userProfile.js"> </script>
+<!-- <script src="../model/signUp_signIn/validation.js"></script>
+<script src="../model/signUp_signIn/signIn.js"></script> --> 
+
+
+</body>
+</html>
