@@ -138,9 +138,9 @@ app.get('/findMatch', (req, res)=> {
 // Delete request virker ikke. Vi skal muligvis bruge et put request, da vi skal tage dataen fra JSON, loope igennem det, og slette noget bestemt data, for at sende dette tilbage til JSON. 
 // En anden mulighed kunne være at lave et delete request som sletter det hele, og efterfølgende et post request der displayer matches, nu uden den person som brugeren har fjernet. 
 // prøv evt at arbejde med det her i en ny github branch (developer branch evt), for at vise at du har styr på github branches. 
+// d
 app.delete('/deleteMatch', (req, res) => {
     var deleteMatch = JSON.parse(fs.readFileSync("likes.JSON"))
-    //console.log(deleteMatch)
     res.json(deleteMatch)
 })
 
