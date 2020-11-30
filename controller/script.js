@@ -3,7 +3,7 @@ let username = document.getElementById('username');
 let phone = document.getElementById('phone');
 //let textonpage = document.getElementById('text');
 
-
+//hej
 
 // Ved at sætte noget ind i input feltet på html siden, og trykke submit, gemmes dataen i en JSON fil. 
 cp.addEventListener('click', ()=> {
