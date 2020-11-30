@@ -42,13 +42,13 @@ document.addEventListener("DOMContentLoaded", function() {
                                 </div>
                             
                                 <div class="match-quantity match-column">
-                                    <button class="btn btn-danger" type="button">REMOVE</button>
+                                    <button id="${findingMatches[i].likedUser}" class="btn btn-danger" type="button">REMOVE</button>
                                 </div>`
                         
                             matchRow.innerHTML = matchRowContents; //html koden indeholdt i matchRowContents variablen indøres i elementet matchRow
                             matchItems.append(matchRow) //matchRow tilføjes til sektionen matchItems på html siden
                             //De næste to linjer Sørger for at henholdsvis removeMatch funktion kaldes når der trykkes på knappen
-                            matchRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeMatch);
+                            //matchRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeMatch);
 
                     } 
                 } 
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
     xhr.send();
 })
 
-
+/*
 function removeMatch(event){
     var buttonClicked = event.target; //ved button.clicked refereres der til den aktuelle element, som skal fjernes
     //Få fat i den aktuelle række, hvor ”remove” knappen er blevet aktiveret
@@ -116,7 +116,7 @@ function removeMatch(event){
 
 }
 
-
+*/
 
 
 

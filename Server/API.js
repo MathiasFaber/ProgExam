@@ -135,6 +135,13 @@ app.get('/findMatch', (req, res)=> {
     res.json(allLikes)
 })
 
+// Delete request virker ikke. Vi skal muligvis bruge et put request, da vi skal tage dataen fra JSON, loope igennem det, og slette noget bestemt data, for at sende dette tilbage til JSON. 
+app.delete('/deleteMatch', (req, res) => {
+    var deleteMatch = JSON.parse(fs.readFileSync("likes.JSON"))
+    //console.log(deleteMatch)
+    res.json(deleteMatch)
+})
+
 
 app.listen(port, console.log(port));
 
