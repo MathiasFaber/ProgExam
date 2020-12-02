@@ -1,4 +1,4 @@
-class matchList {
+/*class matchList {
     // constructor properties
     constructor() {
         this.match_list = [] ;
@@ -29,10 +29,10 @@ class matchList {
             if (matchTitleNames[i].innerText == title) {
             }
         }
-
+*/
 //Generer html-indholdet til en linje med den valgte person (skal indeholde billede)
         // lav også en knap til at fjerne personen fra matchlisten
-        let matchRowContents = `   
+  /*      let matchRowContents = `   
         <div class="match-item match-column">
             <span class="match-item-title">${title}</span>
                    
@@ -46,6 +46,7 @@ class matchList {
         matchRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeMatchItem)
         
     }
-
 }
 
+*/
+s
