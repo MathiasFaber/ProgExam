@@ -39,7 +39,7 @@ function printError(elemID, hintMsg) {
 }
 
 //validate form funktionen defineres
-function validateForm(event) {
+function validateForm(/*event*/) {
     //event.preventDefault 
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;

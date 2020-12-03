@@ -34,6 +34,17 @@ function deleteAccount() {
 
 }
 
+//shit doesnt work
+document.addEventListener("DOMContentLoaded", function(){
+    var showUsername = document.getElementById("showUsername");
+    console.log(showUsername)
+
+    var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    console.log(currentUser)
+
+    showUsername.appendChild(currentUser)
+})
+
 
 
 

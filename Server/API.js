@@ -168,6 +168,45 @@ app.delete('/deleteUser', (req, res)=> {
     res.send(JSON.stringify({userProfilesArray}));
 })
 
+app.post('/editProfile', (req, res) => {
+    var userToEdit = req.body;
+    console.log(userToEdit)
+
+    let data = JSON.parse(fs.readFileSync("storage.JSON"))
+    let dataAsString = JSON.stringify(data);
+
+    // Dette skal sandsynligvis være i apien istedet for. 
+    for (i = 0; i < data.length; i++){
+        for (j = 0; j < data.length; j++){
+          if (userToEdit.username === data[i].username){
+            // når useren der skal ændres er lig med en user i storage.JSON, skal den ændre informationen. 
+            /*fs.writeFile*/(data.splice(i,1)); // Burde fjerne personen fra storage
+            // Her skal laves en funktion til at oprette en ny bruger i storage.
+            // Skal det være 2 endpoints?? 1 som får tilsendt de "gamle data" om currentUser, og 1 som sender den nye data
+            // umiddelbart kan det ikke lade sig gøre, da jeg kører med username som "ID". Derfor SKAL username være det samme, før man kan redigere dataen. 
+            // Kan dette gøres med et update request??
+            console.log("den skal sende dataen fra localstorage til serveren. Serveren skal opdatere den og sende den tilbage")
+          } else {
+            console.log("nope")
+            //alert ("User doesn't exist, or user is not signed in.") // den alerter det aaalt for mange gange. 
+          }
+          
+        }
+
+    }
+
+
+    res.send(dataAsString);
+
+    /*let interMatchDataDis = req.body;
+    let disLikesArray = JSON.parse(fs.readFileSync("disLike.JSON"))
+    disLikesArray.push(interMatchDataDis)
+    fs.writeFileSync("disLike.JSON", JSON.stringify(disLikesArray, null, 2));
+    res.send(JSON.stringify({besked: 'Vi sender vores egen bruger + disliked bruger til JSON', disLikesArray}));
+    */
+
+})
+
 
 app.listen(port, console.log(port));
 

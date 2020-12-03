@@ -53,6 +53,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         matchRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeMatch);
 
                         // Vi kan muligvis lave onclick funktionen herinde? altså når der trykkes remove, så skal den fjerne det fra JSON filen. 
+                        alert ("It's a match!!!!!!!")  
+
                         
 
                     } 

@@ -1,7 +1,32 @@
-const { each } = require("jquery");
+//const { each } = require("jquery");
+
+
+// Virker: viser hvilken bruger der er logget ind. denne del er lavet selv
+var displayUser = document.createElement("P")
+var currentUsername = JSON.parse(localStorage.getItem("currentUser"))
+var thisUser = currentUsername.username
+console.log(currentUsername)
+console.log(thisUser)
+
+var textUser = document.createTextNode(thisUser)
+
+displayUser.appendChild(textUser)
+document.getElementById("showUsername").appendChild(displayUser)
+/*
+window.addEventListener("DOMContentLoaded", function(){
+    var showUsername = document.getElementById("showUsername");
+    console.log(showUsername)
+
+    var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    console.log(currentUser)
+
+    showUsername.appendChild(currentUser)
+})
+*/
+
 
 // Create an event listner for the submit button
-document.getElementById('editBtn').addEventListener('click',updateInfo);
+document.getElementById('edit').addEventListener('click',updateInfo);
 
 class updatedUser {
     constructor(username, password, phone, city, zip, address, email){
@@ -18,17 +43,18 @@ class updatedUser {
     
 
 // Function that updates personal info
+// OBS: only updates localstorage. do a HTTPRequest. 
 function updateInfo(){
 
 
     //get the value from HTML form 
     username = document.getElementById("editUsername").value;
     phone = document.getElementById("editPhone").value;
-    city = document.getElementById("newCity").value;
-    zip = document.getElementById("newZip").value;
-    adress = document.getElementById("newAddress").value;
-    email = document.getElementById("newEmail").value;
-    password = document.getElementById("newPassword").value;
+    city = document.getElementById("editCity").value;
+    zip = document.getElementById("editZip").value;
+    adress = document.getElementById("editAddress").value;
+    email = document.getElementById("editEmail").value;
+    password = document.getElementById("editPassword").value;
     
     // Get the existing data
     currentUser = JSON.parse(window.localStorage.getItem('currentUser'));
@@ -53,50 +79,34 @@ window.localStorage.setItem('currentUser', JSON.stringify(currentUser));
 window.location = ("userProfile.html");
 
     var updatesUser = JSON.parse(localStorage.getItem("User"));
-
-    //pusher ny bruger ind i et array 
-
-
-    var i;
-    for (i = 0; i < updatesUser.length; i++) {
-        email = updatesUser[i].email 
-        console.log(address);
-        if /* check om email er det samme så:*/
-             updatesUser[i] = new updatedUser (username, password, phone, city, zip, address, email)
-
-    }
-
-    updatesUser.push(new updatedUser (username, password, phone, city, zip, address, email));
-    console.log(updatesUser);
-
-    //createduser laves til en string 
-    var updatesUser = JSON.stringify(createdUser);
-    //tilføjes til local storage
-    localStorage.setItem("User", updatesUser);
-    //tilføjer en alert 
-    alert('New User has been created');
-
-
 }
 
+// Edit in progress, post request for updating user info
 
+document.addEventListener("DOMContentLoaded", function() {
+    const xhr = new XMLHttpRequest();
+    xhr.responseType = "json"
+ 
+    //henter matchescontainer fra HTMLfilen 
+    //var matchesContainer = document.getElementById('matchesContainer');
+    //console.log(matchesContainer)
+ 
+    xhr.addEventListener("readystatechange", function() {
+       if(this.readyState === 4) {
+          var userInformation = this.response;
+          console.log(userInformation) //virker, vi får dataen fra serveren
 
-
-
-//constructor(username, password, phone, city, zip, address, email, gender)
-
-/*
-//Herefter oprettes en variable for oprettede bruger, som sendes til localstorage
-    var updatesUser = JSON.parse(localStorage.getItem("User"));
-
-    //pusher ny bruger ind i et array 
-    updatesUser.push(new updatedUser (username, password, phone, city, zip, address, email));
-    console.log(updatesUser);
-
-    //createduser laves til en string 
-    var updatesUser = JSON.stringify(createdUser);
-    //tilføjes til local storage
-    localStorage.setItem("User", updatesUser);
-    //tilføjer en alert 
-    alert('New User has been created');
-*/
+          var currentUserEdit = JSON.parse(localStorage.getItem("currentUser"));
+          console.log(currentUserEdit.username)
+          }
+ 
+       })
+ 
+       xhr.open("POST", "http://localhost:2500/editProfile", true);
+          
+       // definerer at det er en JSON-fil der skal arbejdes med
+       xhr.setRequestHeader("Content-Type", "application/json");
+          
+       // Sender http requested afsted. Den sender altså den data som er indtastet af brugeren, til vores server (localhost). 
+       xhr.send(currentUserEdit); 
+ })

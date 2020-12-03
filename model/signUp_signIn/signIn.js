@@ -1,4 +1,5 @@
 
+
 //si.addEventListener('click', ()=> {
 function signIn(){
     const xhr = new XMLHttpRequest();
@@ -25,9 +26,12 @@ function signIn(){
                 // gem noget i localstorage??
                 localStorage.setItem('currentUser', JSON.stringify(respo));
 
-
+                
+                
                 window.location.href = ("../view/userProfile.html")
                 
+            } else {
+                alert ("Wrong username or password")
             }
             console.log(respo); //Til at se, om request kommer tilbage
         }
@@ -44,3 +48,9 @@ function signIn(){
     xhr.send(JSON.stringify(loginData));
 
 }
+
+
+
+
+
+

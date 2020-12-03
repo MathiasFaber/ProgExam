@@ -2,5 +2,25 @@
   {
     "username": "Jens",
     "disLikedUser": "Mathias"
+  },
+  {
+    "username": "Mathias",
+    "disLikedUser": "Mathias"
+  },
+  {
+    "username": "Bodil",
+    "disLikedUser": "Jens"
+  },
+  {
+    "username": "Bodil",
+    "disLikedUser": "Jens"
+  },
+  {
+    "username": "Bodil",
+    "disLikedUser": "Jens"
+  },
+  {
+    "username": "Bodil",
+    "disLikedUser": "Jens"
   }
 ]

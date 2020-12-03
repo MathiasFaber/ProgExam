@@ -29,7 +29,7 @@ container.innerHTML += '<div class="matchName">' + match.username + '</div>';
 matchContainer.appendChild(container);
 
 /* Add A Like button, som gør at detaljerne fra det valgte match kan videreføres til My Matcges*/
-var addALike = '<button type="button" onclick="addToLike()" class ="addALikeBtn">Like';
+var addALike = '<button type="button" onclick="addToMylikes()" onclick="addToLike()" class ="addALikeBtn">Like';
 container.innerHTML += addALike;
 
 
@@ -103,7 +103,7 @@ function addToMylikes() {
     /*  code review: Man kan ikke tilføje et match flere gange, hvilket ikke er helt optimalt, da man skal have mulighed
     for at tilføje flere identiske matches til kurven, således de stacker */
 
-    var chosenMatches = JSON.parse(localStorage.getItem("likes"));
+    var chosenMatches = JSON.parse(localStorage.getItem("likes")); // hvorfor virker dette ikke, den pusher likes ind i likes.json selvom liket er der i forvejen!
     var i;
     var  matchAlreadySelected = false;
     for (i = 0; i < likes.length; i++) {
@@ -114,7 +114,7 @@ function addToMylikes() {
         }
     }
     if (matchAlreadySelected === false) {
-        alert('A pottential match has been added to your likes. Wait and see if the person likes you');
+        alert('A pottential match has been added to your likes. Go to "My Matches" to check if the person likes you back <3');
         likes.push(matchToLike);
         localStorage.setItem('likes', JSON.stringify(likes));
     }
@@ -181,5 +181,3 @@ function findMatch(matchId) {
         }
     }
 }
-
-'</div>'

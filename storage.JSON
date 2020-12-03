@@ -1,29 +1,29 @@
 [
   {
-    "username": "brugernavn",
-    "phone": "60700512",
+    "username": "Bodil",
+    "phone": "60959434",
     "city": "Greve",
-    "zip": "2670",
-    "address": "hej alle 123",
+    "zip": "2322",
+    "address": "nn 34",
     "email": "mafaber@hotmail.dk",
-    "password": "hej123hej"
-  },
-  {
-    "username": "Mathias",
-    "phone": "60700512",
-    "city": "Greve",
-    "zip": "2670",
-    "address": "Donnergaards alle 205",
-    "email": "mafaber@hotmail.dk",
-    "password": "123"
+    "password": "321"
   },
   {
     "username": "Jens",
     "phone": "60700512",
     "city": "Greve",
     "zip": "2670",
-    "address": "Donnergaards alle 205",
+    "address": "hejsa alle 2323",
     "email": "mafaber@hotmail.dk",
-    "password": "hej"
+    "password": "123"
+  },
+  {
+    "username": "Mathias",
+    "phone": "60700512",
+    "city": "Greve",
+    "zip": "2670",
+    "address": "ee33",
+    "email": "mafaber@hotmail.dk",
+    "password": "hej123hej"
   }
 ]

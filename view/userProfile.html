@@ -37,9 +37,10 @@
 <!-- bruger oplysninger -->
 <h1> My Account </h1>
 
-<p>
-    <a href="editProfile.html">Edit Profile</a>
-</p>
+<div>
+    <p id="showUsername">Du er logget ind som: </p>
+
+</div>
 
 <div class = "user">
     <div class="userinformation">
@@ -49,44 +50,50 @@
 
         Username
         <br/>
-        <input  type="text" id="username" value="" readonly >
+        <input  type="text" id="editUsername" value="">
         <br/>
 
         <br/>
         Phone
         <br/>
-        <input type="text" id="phone" value="" readonly >
+        <input type="text" id="editPhone" value="">
         <br/>
         <br/>
 
         City
         <br/>
-        <input type="text" id="city" value="" readonly >
+        <input type="text" id="editCity" value="">
         <br/>
         <br/>
 
         Zip
         <br/>
-        <input type="text" id="zip" value="" readonly >
+        <input type="text" id="editZip" value="">
         <br/>
         <br/>
 
         Address
         <br/>
-        <input type="text" id="address" value="" readonly >
+        <input type="text" id="editAddress" value="">
         <br/>
         <br/>
 
         E-mail
         <br/>
-        <input type="text" id="email" value="" readonly >
+        <input type="text" id="editEmail" value="">
         <br/>
 
         Password
         <br/>
-        <input type="text" value="*********" readonly >
-        <br/>
+        <input type="text" id="editPassword" value="">
+        <br>
+
+        <div class="editUser">
+            <button id="edit" type="button">Update user information</button>
+        </div>
+
     </div>
+
 
 <!-- ordredata -->
     <div id="matchHistory">
@@ -106,7 +113,12 @@
 
 
 <!-- linker til JavaScript filerne -->
+<script src="../model/myProfile/editProfile.js"> </script>
 <script src="../model/myProfile/deleteProfile.js"> </script>
+<script src="../model/myProfile/logOut.js"> </script>
+<script src="../model/signUp_signIn/signIn.js"> </script>
+
+
 
 <!--script src="../model/myProfile/userProfile.js"> </script-->
 <!-- <script src="../model/signUp_signIn/validation.js"></script>
