@@ -27,15 +27,17 @@ document.addEventListener("DOMContentLoaded", function() {
                             findingMatches[i].username === findingMatches[j].likedUser 
                             && 
                             findingMatches[i].likedUser === findingMatches[j].username ){
-                                console.log(findingMatches[i].likedUser)  
+                            console.log(findingMatches[i].likedUser)  
                                 
 
                         } 
                     } 
                 }
+            })
         }
     })
-    xhr.open("GET", "http://localhost:2500/deleteMatch", true);
+
+    xhr.open("DELETE", "http://localhost:2500/wtf", true);
         
     // definerer at det er en JSON-fil der skal arbejdes med
     xhr.setRequestHeader("Content-Type", "application/json");

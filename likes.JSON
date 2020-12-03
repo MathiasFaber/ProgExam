@@ -1,22 +1,20 @@
 [
   {
-    "username": "Jens",
-    "likedUser": "Mathias"
-  },
-  {
-    "username": "Mathias",
-    "likedUser": "Jens"
-  },
-  {
-    "username": "Jens",
-    "likedUser": "brugernavn"
-  },
-  {
     "username": "brugernavn",
-    "likedUser": "Jens"
+    "phone": "60700512",
+    "city": "Greve",
+    "zip": "2670",
+    "address": "hej alle 123",
+    "email": "mafaber@hotmail.dk",
+    "password": "hej123hej"
   },
   {
-    "username": "Mathias",
-    "likedUser": "brugernavn"
+    "username": "Jens",
+    "phone": "60700512",
+    "city": "Greve",
+    "zip": "2670",
+    "address": "Donnergaards alle 205",
+    "email": "mafaber@hotmail.dk",
+    "password": "hej"
   }
 ]

@@ -152,17 +152,20 @@ app.delete('/deleteMatch', (req, res) => {
 */
 
 // Forsøg på put eller post request, til at opdatere hvilke personer currentuser har liket, i JSON filen.
-app.post('/removeMatch', (req, res)=> {
+app.delete('/deleteUser', (req, res)=> {
     let removeThisPerson = req.body;
-    let likesArray = JSON.parse(fs.readFileSync("likes.JSON"))
-    for (i = 0; i < likesArray; i++){
-        if (removeThisPerson === likesArray[i]){
+    let userProfilesArray = JSON.parse(fs.readFileSync("storage.JSON"))
+    console.log(removeThisPerson, "hej") 
+    console.log(userProfilesArray, "nej")
+
+    for (i = 0; i < userProfilesArray.length; i++){
+        if (removeThisPerson.username === userProfilesArray[i].username){
             console.log("hej")
-            likesArray.splice(likesArray[i])
+            userProfilesArray.splice(i,1);
         }
     }
-    fs.writeFileSync("likes.JSON", JSON.stringify(likesArray, null, 2));
-    res.send(JSON.stringify({besked: 'fjerner et like fra likesarray', likesArray}));
+    fs.writeFileSync("likes.JSON", JSON.stringify(userProfilesArray, null, 2));
+    res.send(JSON.stringify({userProfilesArray}));
 })
 
 
