@@ -66,10 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     } 
                 } 
             }
-<<<<<<< HEAD
-=======
             //alert ("It's a match!!!!!!!")  
->>>>>>> 8dabd7ea94c071a97b8ac11b3f83c9be3ffcd017
             /*
             function deleteMatch (){ // Fungerer ikke pt. men burde det ikke virke?
                 console.log("remove my match")
