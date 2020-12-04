@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     } 
                 } 
             }
-            alert ("It's a match!!!!!!!")  
             /*
             function deleteMatch (){ // Fungerer ikke pt. men burde det ikke virke?
                 console.log("remove my match")
