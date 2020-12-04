@@ -166,8 +166,8 @@ function validateForm(/*event*/) {
     if ((usernameErr || phoneErr || cityErr || zipErr || addressErr || emailErr || passwordErr) == true){
         return false;
     } else {
-    // laver en ny string, som viser hvad der er blevet indtastet 
-        var detailsPreview = "You have entered the following details: \n" +
+    // laver en ny string, som viser hvad der er blevet indtastet    
+    var detailsPreview = "You have entered the following details: \n" +
         "Username: " + username + "\n" + 
         "Email: " + email + "\n" + 
         "Phone numer: " + phone + "\n" + 
@@ -176,6 +176,9 @@ function validateForm(/*event*/) {
         "Address: " + address + "\n" + 
         "username: " + username + "\n" + 
         "Password" ; 
+
+
+        
     
 
 //Herefter oprettes en variable for oprettede bruger, som sendes til localstorage
@@ -195,8 +198,58 @@ function validateForm(/*event*/) {
     alert('New User has been created');
     console.log(newUserAdd);
 
+    sendDataToJSON()
+
     // window.location: returns the href (URL) of the current page
     window.location = ("signIn.html");
 
 }
+
+
+function sendDataToJSON () {
+    const xhr = new XMLHttpRequest();
+        xhr.responseType = "json"
+
+
+        // Variabler som henter alle inputfelternes id, så vi kan arbejde med de inputs brugeren giver os.
+        const username = document.getElementById('username');
+        const phone = document.getElementById('phone');
+        const city = document.getElementById('city');
+        const zip = document.getElementById('zip');
+        const address = document.getElementById('address');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+
+
+        var data = {
+            username : username.value, 
+            phone : phone.value,
+            city : city.value,
+            zip : zip.value,
+            address : address.value,
+            email : email.value,
+            password : password.value,
+        }
+        
+        //console.log(users); //Tjekker hvorvidt vi har fået noget input fra brugeren
+
+        // idk den tjekker vel for om siden er klar, og sender en fejl hvis den ikk er
+        xhr.addEventListener("readystatechange", function() {
+        if(this.readyState === 4) {
+            const respo = this.response 
+            console.log(respo); //Til at se, om request kommer tilbage
+        }
+    });
+
+    // "Åbner" vores http request og angiver at det er POST request fra serveren på localhost:3000
+    xhr.open("POST", "http://localhost:2500/", true);
+
+    // definerer at det er en JSON-fil der skal arbejdes med
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    // Sender http requested afsted. Den sender altså den data som er indtastet af brugeren, til vores server (localhost). 
+    xhr.send(JSON.stringify(data));
+}
+
+
 }

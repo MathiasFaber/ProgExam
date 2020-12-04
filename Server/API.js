@@ -81,6 +81,7 @@ app.post('/interMatch', (req, res)=> {
     console.log(likesArray, "hej")
     fs.writeFileSync("likes.JSON", JSON.stringify(likesArray, null, 2));
     res.send(JSON.stringify({besked: 'Vi sender vores egen bruger + liked bruger til JSON', likesArray}));
+    
     /*
     var likeAlreadyMade = false; 
     for (i = 0; i < likesArray; i++){

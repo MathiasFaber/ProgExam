@@ -1,3 +1,4 @@
+// Dette er mine forsøg på testing indtil videre. 
 
 /*
 // forsøg på at benytte samme fremgangsmåde til at teste, som vi fik gennemgået i undervisningen. 

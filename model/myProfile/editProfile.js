@@ -2,16 +2,26 @@
 
 
 // Virker: viser hvilken bruger der er logget ind. denne del er lavet selv
-var displayUser = document.createElement("P")
-var currentUsername = JSON.parse(localStorage.getItem("currentUser"))
-var thisUser = currentUsername.username
-console.log(currentUsername)
-console.log(thisUser)
+// Hvis der ikke er en bruger der er logget ind, sendes man til login siden.
+var areyouloggedin = localStorage.getItem("currentUser");
+if (areyouloggedin == null){
+    alert ("Please login, or create a user to login :-)")
+    window.location.href = "file:///Users/mathiasfaber/Library/Mobile%20Documents/com~apple~CloudDocs/Ha.it%20-%201.%20semester/Programmering/29:11/view/signIn.html";
+} else {
+    var displayUser = document.createElement("P")
+    var currentUsername = JSON.parse(localStorage.getItem("currentUser"))
+    var thisUser = currentUsername.username
+    console.log(currentUsername)
+    console.log(thisUser)
 
-var textUser = document.createTextNode(thisUser)
+    var textUser = document.createTextNode(thisUser)
 
-displayUser.appendChild(textUser)
-document.getElementById("showUsername").appendChild(displayUser)
+    displayUser.appendChild(textUser)
+    document.getElementById("showUsername").appendChild(displayUser)
+
+}
+
+
 /*
 window.addEventListener("DOMContentLoaded", function(){
     var showUsername = document.getElementById("showUsername");
@@ -81,6 +91,8 @@ window.location = ("userProfile.html");
     var updatesUser = JSON.parse(localStorage.getItem("User"));
 }
 
+
+/*
 // Edit in progress, post request for updating user info
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -90,7 +102,8 @@ document.addEventListener("DOMContentLoaded", function() {
     //henter matchescontainer fra HTMLfilen 
     //var matchesContainer = document.getElementById('matchesContainer');
     //console.log(matchesContainer)
- 
+    var currentUserEdit = JSON.parse(localStorage.getItem("currentUser"));
+
     xhr.addEventListener("readystatechange", function() {
        if(this.readyState === 4) {
           var userInformation = this.response;
@@ -110,3 +123,5 @@ document.addEventListener("DOMContentLoaded", function() {
        // Sender http requested afsted. Den sender altså den data som er indtastet af brugeren, til vores server (localhost). 
        xhr.send(currentUserEdit); 
  })
+
+ */

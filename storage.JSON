@@ -9,21 +9,30 @@
     "password": "321"
   },
   {
-    "username": "Jens",
-    "phone": "60700512",
-    "city": "Greve",
-    "zip": "2670",
-    "address": "hejsa alle 2323",
+    "username": "oel",
+    "phone": "12343112",
+    "city": "frederiksberg",
+    "zip": "2300",
+    "address": "keke 3",
     "email": "mafaber@hotmail.dk",
+    "password": "9090"
+  },
+  {
+    "username": "Jens",
+    "phone": "12322112",
+    "city": "dede",
+    "zip": "3232",
+    "address": "nn 34",
+    "email": "hej@hejhej.dk",
     "password": "123"
   },
   {
-    "username": "Mathias",
-    "phone": "60700512",
-    "city": "Greve",
+    "username": "jenshansensbondegaard",
+    "phone": "78789980",
+    "city": "fe",
     "zip": "2670",
-    "address": "ee33",
+    "address": "hejsa alle 2323",
     "email": "mafaber@hotmail.dk",
-    "password": "hej123hej"
+    "password": "9090"
   }
 ]

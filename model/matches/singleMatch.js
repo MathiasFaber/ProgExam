@@ -29,15 +29,17 @@ container.innerHTML += '<div class="matchName">' + match.username + '</div>';
 matchContainer.appendChild(container);
 
 /* Add A Like button, som gør at detaljerne fra det valgte match kan videreføres til My Matcges*/
-var addALike = '<button type="button" onclick="addToMylikes()" onclick="addToLike()" class ="addALikeBtn">Like';
+var addALike = '<button type="button" onclick="addToMylikes()" class ="addALikeBtn">Like';
+// onclick="addToMylikes()" og onclick="addToLike()"
 container.innerHTML += addALike;
 
 
  // Ved at sætte noget ind i input feltet på html siden, og trykke submit, gemmes dataen i en JSON fil. 
+ // per default skal der altid stå et hardcodet like. 
 function addToLike() {
     const xhr = new XMLHttpRequest();
     xhr.responseType = "json"
-    console.log("hej")
+    console.log("difar")
 
    //HTTP-request
    let foundUser = JSON.parse(localStorage.getItem("founduser"))
@@ -50,6 +52,7 @@ function addToLike() {
         username : currentUser.username,
         likedUser : foundUser.username
     }
+    
     /*
     if(likes[0] != currentUser.username){
         likes.push(currentUser.username)
@@ -107,17 +110,20 @@ function addToMylikes() {
     var i;
     var  matchAlreadySelected = false;
     for (i = 0; i < likes.length; i++) {
-        if (likes[i]._matchName === matchToLike._matchName){
+        if (likes[i].username === matchToLike.username){
+            console.log()
             alert('You have already liked this person');
             matchAlreadySelected = true;
             break
         }
     }
     if (matchAlreadySelected === false) {
-        alert('A pottential match has been added to your likes. Go to "My Matches" to check if the person likes you back <3');
+        alert('A potential match has been added to your likes. Go to "My Matches" to check if the person likes you back <3');
         likes.push(matchToLike);
         localStorage.setItem('likes', JSON.stringify(likes));
+        addToLike()
     }
+
     window.location = ("matches.html");
 
 }
