@@ -1,26 +1,10 @@
 [
   {
+    "username": "Test1",
+    "disLikedUser": "Test2"
+  },
+  {
     "username": "Jens",
-    "disLikedUser": "Mathias"
-  },
-  {
-    "username": "Mathias",
-    "disLikedUser": "Mathias"
-  },
-  {
-    "username": "Bodil",
-    "disLikedUser": "Jens"
-  },
-  {
-    "username": "Bodil",
-    "disLikedUser": "Jens"
-  },
-  {
-    "username": "Bodil",
-    "disLikedUser": "Jens"
-  },
-  {
-    "username": "Bodil",
     "disLikedUser": "Jens"
   }
 ]

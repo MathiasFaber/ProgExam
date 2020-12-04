@@ -1,4 +1,10 @@
-// Vi laver et post request der ligner likesarrayet meget! 
+// tjekker om brugeren er logged ind. Brugeren kan kun se siderne: matches, myMatches og My profile, hvis brugeren er logged in.
+var areyouloggedin = localStorage.getItem("currentUser");
+if (areyouloggedin == null){
+    alert ("Please login, or create a user to login :-)")
+    window.location.href = "file:///Users/mathiasfaber/Library/Mobile%20Documents/com~apple~CloudDocs/Ha.it%20-%201.%20semester/Programmering/29:11/view/signIn.html";
+} else {
+    // Vi laver et post request der ligner likesarrayet meget! 
 // Inde i API skal vi så loope igennem likesarrayet, og finde matches. 
 // dvs. if (likesarray[i].username == likesarray[j].likedPerson && likesarray[j].username == likesarray[i].likedPerson)
 document.addEventListener("DOMContentLoaded", function() {
@@ -60,6 +66,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     } 
                 } 
             }
+<<<<<<< HEAD
+=======
+            //alert ("It's a match!!!!!!!")  
+>>>>>>> 8dabd7ea94c071a97b8ac11b3f83c9be3ffcd017
             /*
             function deleteMatch (){ // Fungerer ikke pt. men burde det ikke virke?
                 console.log("remove my match")
@@ -69,14 +79,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     })
 
-    
-
     xhr.open("GET", "http://localhost:2500/findMatch", true);
         
     // definerer at det er en JSON-fil der skal arbejdes med
     xhr.setRequestHeader("Content-Type", "application/json");
         
-    // Sender http requested afsted. Den sender altså den data som er indtastet af brugeren, til vores server (localhost). 
     xhr.send();
 })
 
@@ -111,6 +118,7 @@ function removeMatch(event){
     // Sender http requested afsted. Den sender altså den data som er indtastet af brugeren, til vores server (localhost). 
     xhr.send(/*Hvad skal den sende afsted?? Den skal sende det array afsted hvor matchet er blevet fjernet!*/);
 }
+}
 
 
 
@@ -136,5 +144,9 @@ function removeMatch(event){
     // Sender http requested afsted. Den sender altså den data som er indtastet af brugeren, til vores server (localhost). 
     xhr.send();
 }
+
+}
+
+
 
 */

@@ -1,20 +1,6 @@
 [
   {
-    "username": "Bodil",
-    "phone": "60959434",
-    "city": "Greve",
-    "zip": "2322",
-    "address": "nn 34",
-    "email": "mafaber@hotmail.dk",
-    "password": "321"
-  },
-  {
     "username": "Jens",
-    "phone": "60700512",
-    "city": "Greve",
-    "zip": "2670",
-    "address": "hejsa alle 2323",
-    "email": "mafaber@hotmail.dk",
-    "password": "123"
+    "likedUser": "Mathias"
   }
 ]
