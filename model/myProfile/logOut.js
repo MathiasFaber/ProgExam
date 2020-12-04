@@ -6,5 +6,8 @@ var LogOutBtn = document.getElementById("logOutBtn");
 // Localstorage-key "currentUser" bliver fjernet og man kan dermed ikke se 
 LogOutBtn.addEventListener("click", function(){
     localStorage.removeItem("currentUser");
+    localStorage.removeItem("founduser");
+    localStorage.removeItem("likes");
+
     window.location.replace("../view/signIn.html")
 })

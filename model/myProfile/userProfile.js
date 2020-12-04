@@ -1,3 +1,4 @@
+// Benyttes denne side??
 
 //variabel for den bruger, som er logget ind 
 var currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -34,6 +35,7 @@ function deleteAccount() {
 
 }
 
+/*
 //shit doesnt work
 document.addEventListener("DOMContentLoaded", function(){
     var showUsername = document.getElementById("showUsername");
@@ -44,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     showUsername.appendChild(currentUser)
 })
+*/
 
 
 
