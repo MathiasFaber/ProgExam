@@ -2,5 +2,13 @@
   {
     "username": "Jens",
     "likedUser": "Mathias"
+  },
+  {
+    "username": "oel",
+    "likedUser": "Bodil"
+  },
+  {
+    "username": "Bodil",
+    "likedUser": "oel"
   }
 ]

@@ -70,7 +70,7 @@ function validateForm(/*event*/) {
 //hvilke situationer der skal printes en errormessage defineres
             if (regex.test(username) === false){
                 printError("usernameErr", "Please enter a username using the standard alphabet");
-            }else {
+            } else {
                 printError("usernameErr", "");
                 usernameErr = false;
             }

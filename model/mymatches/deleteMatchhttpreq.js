@@ -1,3 +1,8 @@
+
+
+// Virker ikke, men evt lav delete requestet her?
+
+
 // Lav en eventlistener på delete knappen i mymatches.html
 
 // ONLOAD FUNKTION. siden skal loades. dvs selve knappen skal laves, før vi kan køre en funktion på knappen.

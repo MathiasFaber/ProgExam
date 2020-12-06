@@ -208,6 +208,11 @@ app.post('/editProfile', (req, res) => {
 
 })
 
+// fjern match:
+// Overvej at lave et endpoint som sørger for at "currentuser", ligger i en JSON fil og bliver overwrited hver gang en ny bruger logger ind. 
+// På den måde kan man loope igennen likes.JSON, og sammenligne med om det passer med at (likes.json).likedPerson = (Den bruger der skal fjernes(dette sendes fra httpreq))
+// Når de er lig hinanden skal dette likes fjernes fra likes.JSON, med .splice(i, 1), og vi laver nu en fs.writefile, nu uden det like der er fjernet 
+
 
 app.listen(port, console.log(port));
 

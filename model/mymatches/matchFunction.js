@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 
+// Does not work
 function removeMatch(event){
     const xhr = new XMLHttpRequest();
     xhr.responseType = "json";
