@@ -1,13 +1,11 @@
-//const { each } = require("jquery");
-
-
-// Virker: viser hvilken bruger der er logget ind. denne del er lavet selv
+// Viser hvilken bruger der er logget ind. Denne del er udarbejdet på egen hånd. 
 // Hvis der ikke er en bruger der er logget ind, sendes man til login siden.
 var areyouloggedin = localStorage.getItem("currentUser");
 if (areyouloggedin == null){
     alert ("Please login, or create a user to login :-)")
-    window.location.href = "file:///Users/mathiasfaber/Library/Mobile%20Documents/com~apple~CloudDocs/Ha.it%20-%201.%20semester/Programmering/29:11/view/signIn.html";
+    window.location.href = "../view/signIn.html";
 } else {
+    // Hvis brugeren er logget ind, laves der blot et element i html filen, hvor brugerens navn sættes ind. 
     var displayUser = document.createElement("P")
     var currentUsername = JSON.parse(localStorage.getItem("currentUser"))
     var thisUser = currentUsername.username
@@ -22,20 +20,8 @@ if (areyouloggedin == null){
 }
 
 
-/*
-window.addEventListener("DOMContentLoaded", function(){
-    var showUsername = document.getElementById("showUsername");
-    console.log(showUsername)
-
-    var currentUser = JSON.parse(localStorage.getItem("currentUser"));
-    console.log(currentUser)
-
-    showUsername.appendChild(currentUser)
-})
-*/
-
-
-// Create an event listner for the submit button
+// Her laves en eventlistener på submit knappen. Dvs at denne skal opdatere en brugers profiloplysninger, 
+// Denne funktion virker ikke pt, og ændrer kun i localstorage. Den skal kunne ændre i JSON-filen. 
 document.getElementById('edit').addEventListener('click',updateInfo);
 
 class updatedUser {
@@ -48,16 +34,16 @@ class updatedUser {
         this.zip = zip;
         this.address = address;
         this.email = email;
-    }}
+    }
+}
 
     
 
-// Function that updates personal info
-// OBS: only updates localstorage. do a HTTPRequest. 
+
 function updateInfo(){
 
 
-    //get the value from HTML form 
+    // Henter values som brugeren har indtastet 
     username = document.getElementById("editUsername").value;
     phone = document.getElementById("editPhone").value;
     city = document.getElementById("editCity").value;
@@ -66,13 +52,12 @@ function updateInfo(){
     email = document.getElementById("editEmail").value;
     password = document.getElementById("editPassword").value;
     
-    // Get the existing data
+    // finder den eksisterende data fra currentUser i localstorage. 
     currentUser = JSON.parse(window.localStorage.getItem('currentUser'));
-    //get user data
    
 
 
-    // Add new data to localStorage Array
+    // Her ændres dataen i localstorage til at være den data som brugeren har tastet ind, da han/hun ændrede sin profil.
     currentUser["username"] = username;
     currentUser["phone"] = phone;
     currentUser["city"] = city;
@@ -83,10 +68,10 @@ function updateInfo(){
 
 
 
-// Save back to localStorage
-window.localStorage.setItem('currentUser', JSON.stringify(currentUser));
-//window.localStorage.setItem('User', JSON.stringify(changedUser));
-window.location = ("userProfile.html");
+    // Så gemmer jeg det i localstorage igen. 
+    window.localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    // Og sender her brugeren tilbage til samme side, for at opdatere siden. 
+    window.location = ("userProfile.html");
 
     var updatesUser = JSON.parse(localStorage.getItem("User"));
 }

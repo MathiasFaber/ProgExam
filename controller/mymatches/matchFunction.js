@@ -2,24 +2,20 @@
 var areyouloggedin = localStorage.getItem("currentUser");
 if (areyouloggedin == null){
     alert ("Please login, or create a user to login :-)")
-    window.location.href = "file:///Users/mathiasfaber/Library/Mobile%20Documents/com~apple~CloudDocs/Ha.it%20-%201.%20semester/Programmering/29:11/view/signIn.html";
+    window.location.href = "../view/signIn.html";
 } else {
-    // Vi laver et post request der ligner likesarrayet meget! 
-// Inde i API skal vi så loope igennem likesarrayet, og finde matches. 
-// dvs. if (likesarray[i].username == likesarray[j].likedPerson && likesarray[j].username == likesarray[i].likedPerson)
+// http-request som spørger efter data fra serveren. Her efterspørger den de data der ligger i likes.JSON
 document.addEventListener("DOMContentLoaded", function() {
     const xhr = new XMLHttpRequest();
     xhr.responseType = "json"
  
-    //henter matchescontainer fra HTMLfilen 
-    var matchesContainer1 = document.getElementById('findMatches');
-    //console.log(matchesContainer)
- 
     xhr.addEventListener("readystatechange", function() {
        if(this.readyState === 4) {
+           // her henter vi svaret fra serveren. dvs. listen over alle likes i systemet. 
           var findingMatches = this.response;
           console.log(findingMatches)
 
+          // Her tager vi fat i localstorage key'en currentUser, fordi vi i funktionen skal sammenligne den indlogede bruger med likesarrayet. 
           let currentUser = JSON.parse(localStorage.getItem("currentUser"))
             console.log(currentUser)
         
@@ -27,20 +23,21 @@ document.addEventListener("DOMContentLoaded", function() {
             for(var i=0; i< findingMatches.length; i++){
                 for(var j=0; j < findingMatches.length; j++){
                     if (currentUser.username === findingMatches[i].username 
+                        // Hvis den indloggede bruger har liket en hvilken som helst person, er denne del korrekt.
                         && 
                         findingMatches[i].username === findingMatches[j].likedUser 
+                        // Hvis brugeren der har liket en person, også er blevet liket tilbage (af en hvilken som helst bruger), er denne del korrekt.
                         && 
-                        findingMatches[i].likedUser === findingMatches[j].username ){
+                        findingMatches[i].likedUser === findingMatches[j].username ){ 
+                        // Hvis brugeren der har liket en anden bruger også er blevet liket tilbage af selv samme bruger, så er hele dette if statement korrekt, og koden nedenfor kører.
                         console.log(findingMatches[i].likedUser)  
                         
+                        // Her laves en div for hver person der er matchet med. 
                         var matchRow = document.createElement('div');
-                        matchRow.classList.add('match-row'); //vi bruger CSS stilen 'match-row'for div elementet matchRow
-                        var matchItems = document.getElementsByClassName('match-items')[0]; /*vi vil senere tilføje en række til  div sektionen 'match-items'
-                        hvor de valgte personer listes */
-                        var matchTitleNames = matchItems.getElementsByClassName('match-item-title');
-                    
-                        //Generer html-indholdet til en linje med det valgte match, (Web Dev Simplified - youtube, 2018)
-                        // laver en knap til at fjerne matchet fra matchlisten
+                        // Her gives blot en class til "matchrow", for at kunne arbejde med den i css. 
+                        matchRow.classList.add('match-row'); 
+
+                        // Her laves inline html. Det gøres for at kunne skabe html elementerne for hvert match en bruger har fået. 
                         let matchRowContents = `   
                             <div class="match-items match-column">
                                 <span class="match-name">${findingMatches[i].likedUser}</span>
@@ -50,41 +47,40 @@ document.addEventListener("DOMContentLoaded", function() {
                             <div class="match-quantity match-column">
                                 <button class="btn btn-danger" type="button">REMOVE</button>
                             </div>`
-                           // <script> function deleteMatch(){console.log("removemymatchb)}</script>` // inline javascript funktion virker ikke
-                        
-                    
-                        matchRow.innerHTML = matchRowContents; //html koden indeholdt i matchRowContents variablen indøres i elementet matchRow
-                        matchItems.append(matchRow) //matchRow tilføjes til sektionen matchItems på html siden
-                        //De næste to linjer Sørger for at henholdsvis removeMatch funktion kaldes når der trykkes på knappen
+
+                        // Her hentes den klasse som er lavet til hver match herover. 
+                        var matchItems = document.getElementsByClassName('match-items')[0]; 
+
+                        // Her indsættes vores inline html i matchrow.innterhtml, som er den div vi lavede på linje 36
+                        matchRow.innerHTML = matchRowContents; 
+
+                        // matchrow bliver lavet i forlængelse af matchitems. append() bruges her til at vise at matchitems skal være "parent node" og matchrow er efterfølgeren. 
+                        // https://www.javascripttutorial.net/javascript-dom/javascript-append/ 
+                        matchItems.append(matchRow) 
+
+                        // Her laves eventlistener på remove match knappen (Remove match knappen virker ikke pt. da den kun fjerner matchet fra siden, ikke fra JSON.)
                         matchRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeMatch);
 
-                        // Vi kan muligvis lave onclick funktionen herinde? altså når der trykkes remove, så skal den fjerne det fra JSON filen. 
-                        alert ("It's a match!!!!!!!")  
-
-                        
-
+                        // Hvis brugeren har fået et match, får han/hun en notofikation om dette. 
+                        alert ("It's a match!!!!!!!")        
                     } 
                 } 
             }
-            //alert ("It's a match!!!!!!!")  
-            /*
-            function deleteMatch (){ // Fungerer ikke pt. men burde det ikke virke?
-                console.log("remove my match")
-        
-            }
-            */
         }
     })
 
+    // Viser at det er et get request, på denne url adresse som vi forespørger. 
     xhr.open("GET", "http://localhost:2500/findMatch", true);
         
     // definerer at det er en JSON-fil der skal arbejdes med
     xhr.setRequestHeader("Content-Type", "application/json");
         
+    // Jeg sender ikke noget data med, da det er et get request. 
     xhr.send();
 })
 
 
+/*
 // Does not work
 function removeMatch(event){
     const xhr = new XMLHttpRequest();
@@ -114,9 +110,10 @@ function removeMatch(event){
     xhr.setRequestHeader("Content-Type", "application/json");
         
     // Sender http requested afsted. Den sender altså den data som er indtastet af brugeren, til vores server (localhost). 
-    xhr.send(/*Hvad skal den sende afsted?? Den skal sende det array afsted hvor matchet er blevet fjernet!*/);
+    xhr.send(Hvad skal den sende afsted?? Den skal sende det array afsted hvor matchet er blevet fjernet!);
 }
 }
+*/
 
 
 
@@ -142,9 +139,6 @@ function removeMatch(event){
     // Sender http requested afsted. Den sender altså den data som er indtastet af brugeren, til vores server (localhost). 
     xhr.send();
 }
-
+*/
 }
 
-
-
-*/
