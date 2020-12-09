@@ -34,5 +34,14 @@
     "address": "hejsa alle 2323",
     "email": "mafaber@hotmail.dk",
     "password": "9090"
+  },
+  {
+    "username": "bohi",
+    "phone": "78789980",
+    "city": "fe",
+    "zip": "2322",
+    "address": "hej alle 123",
+    "email": "mafaber@hotmail.dk",
+    "password": "9090"
   }
 ]

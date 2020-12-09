@@ -161,7 +161,7 @@ function validateForm(){
         }
     }
 
-    // Hvis der er fejl nogle af valideringerne skal den ikke fortsætte med at eksekvere koden. og den skal ikke sende noget data til json.
+    // Hvis der er fejl i nogle af valideringerne skal den ikke fortsætte med at eksekvere koden. og den skal ikke sende noget data til json.
     if ((usernameErr || phoneErr || cityErr || zipErr || addressErr || emailErr || passwordErr) == true){
         return false;
     } else {
@@ -200,40 +200,41 @@ function validateForm(){
     // Når brugeren har oprettet sig, og dataen er sendt til serveren, sendes brugeren til login siden. 
     window.location = ("signIn.html");
 
+    }
 }
 
 
 function sendDataToJSON () {
     const xhr = new XMLHttpRequest();
-        xhr.responseType = "json"
+    xhr.responseType = "json"
 
-        // Laver variabler for alle de inputs der tastes ind ved oprettelse, så vi kan arbejde med disse values.
-        const username = document.getElementById('username');
-        const phone = document.getElementById('phone');
-        const city = document.getElementById('city');
-        const zip = document.getElementById('zip');
-        const address = document.getElementById('address');
-        const email = document.getElementById('email');
-        const password = document.getElementById('password');
+    // Laver variabler for alle de inputs der tastes ind ved oprettelse, så vi kan arbejde med disse values.
+    const username = document.getElementById('username');
+    const phone = document.getElementById('phone');
+    const city = document.getElementById('city');
+    const zip = document.getElementById('zip');
+    const address = document.getElementById('address');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
 
 
-        // Her laves de indtastede data om til et objekt. 
-        // Dvs. at hvert input felt også får en key. Så når du skriver du hedder Jens, vil der stå "username" : "Jens", i objektet. 
-        var data = {
-            username : username.value, 
-            phone : phone.value,
-            city : city.value,
-            zip : zip.value,
-            address : address.value,
-            email : email.value,
-            password : password.value,
-        }
+    // Her laves de indtastede data om til et objekt. 
+    // Dvs. at hvert input felt også får en key. Så når du skriver du hedder Jens, vil der stå "username" : "Jens", i objektet. 
+    var data = {
+        username : username.value, 
+        phone : phone.value,
+        city : city.value,
+        zip : zip.value,
+        address : address.value,
+        email : email.value,
+        password : password.value,
+    }
 
-        // Dette er blot en eventlistener, som gør at funktionen kører når "readystatechange" er opfyldt. 
-        // readystatechange er opfyldt når siden er klar med svaret fra serveren. 
-        xhr.addEventListener("readystatechange", function() {
+    // Dette er blot en eventlistener, som gør at funktionen kører når "readystatechange" er opfyldt. 
+    // readystatechange er opfyldt når siden er klar med svaret fra serveren. 
+    xhr.addEventListener("readystatechange", function() {
         if(this.readyState === 4) {
-            const respo = this.response 
+        const respo = this.response 
         }
     });
 
@@ -245,7 +246,4 @@ function sendDataToJSON () {
 
     // Sender http requested afsted. Den sender altså den data som er indtastet af brugeren, til vores server (localhost). 
     xhr.send(JSON.stringify(data));
-}
-
-
 }

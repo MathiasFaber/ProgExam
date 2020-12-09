@@ -106,7 +106,7 @@ function addToMylikes() {
     }
 
     // når brugeren har liket en person, sendes brugeren tilbage til matches.html
-    window.location = ("matches.html");
+    window.location = ("findLove.html");
 
 }
 

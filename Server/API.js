@@ -202,5 +202,17 @@ app.post('/editProfile', (req, res) => {
 // Når de er lig hinanden skal dette likes fjernes fra likes.JSON, med .splice(i, 1), og vi laver nu en fs.writefile, nu uden det like der er fjernet 
 
 
+// forsøg på delete request
+// virker ikke pt
+app.delete('/deleteUser', (req, res)=> {
+    
+    let userArray = JSON.parse(fs.readFileSync("storage.JSON"))
+    let newUsers = userArray.filter(user=> user.username !== req.body.username);
+    fs.writeFileSync("storage.JSON", JSON.stringify(newUsers, null, 2));
+    res.send(JSON.stringify({besked: 'Vi sender det nye userarray tilbage', newUsers}));
+
+})
+
+
 app.listen(port, console.log(port));
 

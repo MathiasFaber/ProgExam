@@ -142,14 +142,12 @@ nav{
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
-    background-color: #5d4954;
+    background-color: darkred;
 }
 
 .logo {
     color: rgb(226, 226, 226);
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 20px;
+    letter-spacing: 3px;
 }
 
 .nav-links {
@@ -168,4 +166,10 @@ nav{
     letter-spacing: 3px;
     font-weight: bold;
     font-size: 14px;
+}
+
+.findLove {
+    padding: 2px;
+    background-color: red;
+    
 }

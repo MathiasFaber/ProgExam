@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             </div>
                         
                             <div class="match-quantity match-column">
-                                <button class="btn btn-danger" type="button">REMOVE</button>
+                                <button class="btn btn-danger" id="deleteButton"type="button">REMOVE</button>
                             </div>`
 
                         // Her hentes den klasse som er lavet til hver match herover. 
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         matchItems.append(matchRow) 
 
                         // Her laves eventlistener på remove match knappen (Remove match knappen virker ikke pt. da den kun fjerner matchet fra siden, ikke fra JSON.)
-                        matchRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeMatch);
+                        // matchRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeMatch);
 
                         // Hvis brugeren har fået et match, får han/hun en notofikation om dette. 
                         alert ("It's a match!!!!!!!")        
@@ -112,8 +112,9 @@ function removeMatch(event){
     // Sender http requested afsted. Den sender altså den data som er indtastet af brugeren, til vores server (localhost). 
     xhr.send(Hvad skal den sende afsted?? Den skal sende det array afsted hvor matchet er blevet fjernet!);
 }
-}
 */
+}
+
 
 
 
@@ -140,5 +141,5 @@ function removeMatch(event){
     xhr.send();
 }
 */
-}
+
 
