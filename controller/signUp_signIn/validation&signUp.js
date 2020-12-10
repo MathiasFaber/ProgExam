@@ -1,3 +1,5 @@
+// Store dele af validation og signUp er lavet i samarbejde med min studiegruppe. 
+
 // Her lavess klassen user, som er den der bruges hver gang en profil opretter sig. 
 class User {
     constructor(username, password, phone, city, zip, address, email, gender){
@@ -9,7 +11,7 @@ class User {
         this.address = address;
         this.email = email;
         this.gender = gender;
-        // this.id = id; Her overvejede jeg at lave en funktion, som ville generere et vilkårligt id nummer til hver rbuger der oprettede sig. 
+        // this.id = id; Her overvejede jeg at lave en funktion, som ville generere et vilkårligt id nummer til hver bruger der oprettede sig. 
         // Denne ide kom jeg fra igen, og besluttede mig for at usernamet blot skal være unikt, for at en bruger kan oprette sig i systemet. 
     }
 }
@@ -204,11 +206,12 @@ function validateForm(){
 }
 
 
+// Når valideringen er fuldført og lever op til kravene kører følgende funktion, som sender brugerens data til storage.JSON. 
 function sendDataToJSON () {
     const xhr = new XMLHttpRequest();
     xhr.responseType = "json"
 
-    // Laver variabler for alle de inputs der tastes ind ved oprettelse, så vi kan arbejde med disse values.
+    // Laver variabler for alle de inputs der tastes ind ved oprettelse, så jeg kan arbejde med disse values.
     const username = document.getElementById('username');
     const phone = document.getElementById('phone');
     const city = document.getElementById('city');

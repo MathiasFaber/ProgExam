@@ -1,7 +1,6 @@
 // udarbejdet i samarbejde med studiegruppe
 // virker ikke!
-
-
+/*
 deleteUser = document.getElementById("deleteButton")
     
 deleteUser.addEventListener('click', function() {
@@ -27,7 +26,9 @@ deleteUser.addEventListener('click', function() {
         xhr.send();
     })
     
+*/
 
+/*
 
 async function slet() {
 await deleteUser.addEventListener('click', function() {
@@ -75,3 +76,4 @@ await deleteUser.addEventListener('click', function() {
     })
 
     }
+*/

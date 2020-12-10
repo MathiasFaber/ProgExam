@@ -1,3 +1,4 @@
+// Dette stykke kode er tildels lavet i samarbejde med min studiegruppe
 
 // Denne funktion bliver kaldt når en bruger logger ind. 
 function signIn(){
@@ -19,18 +20,13 @@ function signIn(){
     xhr.addEventListener("readystatechange", function() {
         if(this.readyState === 4) {
             const respo = this.response 
-            console.log(respo)
-
             // If statementet her viser, at hvis serveren svarer tilbage med at username og password er korrekt, kan funkitonen herunder køre.
             // Hvis ikke, alerter den "Wrong username or password"
             if (respo.err !== 'Failed'){
-               
                 // Sætter localstorage key'en currentUser til at være den person som er logget ind. Dvs den data som brugeren matcher med i storage.json filen. 
                 localStorage.setItem('currentUser', JSON.stringify(respo));
-
                 // Brugeren sendes ind på "my profile" siden, hvis det er et succesfuldt login. 
                 window.location.href = ("../view/userProfile.html")
-                
             } else {
                 alert ("Wrong username or password")
             }
@@ -47,9 +43,3 @@ function signIn(){
     xhr.send(JSON.stringify(loginData));
 
 }
-
-
-
-
-
-

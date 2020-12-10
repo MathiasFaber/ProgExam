@@ -1,4 +1,4 @@
-// Denne del er udarbejdet selv
+// Denne del er udarbejdet på egen hånd
 
 var LogOutBtn = document.getElementById("logOutBtn");
 

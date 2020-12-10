@@ -75,30 +75,21 @@ app.post('/signIn', (req, res)=> {
     
     for (let i = 0; i < createdUser.length; i++) {
         if (loginData.username === createdUser[i].username && loginData.password === createdUser[i].password) {
-
             return res.json(createdUser[i]);
-
-            //CurrentUser skal vise brugeroplysningerne på den bruger, som logger ind
-            //localStorage.setItem('currentUser', JSON.stringify(createdUser[i]));
-            //location.href = "userProfile.html";
-            
-            // hvis brugeroplysningerne er korrekte returneres at brugeren er inde
-            // return true;
         }
-
     }
     res.json({err:"Failed"});
 })
 
 // GET request som henter dataen fra storage.JSON. 
-// det bruges til at vise alle brugere i systemet på siden hvor man kan like ller dislike personer. 
+// det bruges til at vise alle brugere i systemet på siden hvor man kan like eller dislike personer. 
 app.get('/allUsers', (req, res)=> {
     var allMatches = JSON.parse(fs.readFileSync("model/storage.JSON"))
     res.json(allMatches)
 })
 
 // Dette post request er det som ligger på server siden af vores like funktion. 
-// Når en bruger liker en anden bruger, sendes et objekt ind i likes.json, som indeholder username på den bruger der er logget ind, samt username på den bruger der bliver liket. 
+// Når en bruger liker en anden bruger, sendes et objekt ind i likes.json (som en streng), som indeholder username på den bruger der er logget ind, samt username på den bruger der bliver liket. 
 app.post('/interMatch', (req, res)=> {
     let interMatchData = req.body;
     let likesArray = JSON.parse(fs.readFileSync("model/likes.JSON"))
@@ -131,17 +122,16 @@ app.get('/deleteMatch', (req, res)=> {
 })
 
 // Tanker omkring delete request. 
-// Delete request virker ikke. Vi skal muligvis bruge et put request, da vi skal tage dataen fra JSON, loope igennem det, og slette noget bestemt data, for at sende dette tilbage til JSON. 
+// Delete request virker ikke. Skal muligvis bruge et put request, da vi skal tage dataen fra JSON, loope igennem det, og slette noget bestemt data, for at sende dette tilbage til JSON. 
 // En anden mulighed kunne være at lave et delete request som sletter det hele, og efterfølgende et post request der displayer matches, nu uden den person som brugeren har fjernet. 
-// prøv evt at arbejde med det her i en ny github branch (developer branch evt), for at vise at du har styr på github branches. 
 
 /*
-// Forsøg på delete request, til at opdatere hvilke personer currentuser har liket, i JSON filen. virker ikke pt. 
+// Forsøg på delete request, til at opdatere hvilke personer currentuser har liket, i JSON filen. virker ikke... 
 app.delete('/deleteUser', (req, res)=> {
     let removeThisPerson = req.body;
     let userProfilesArray = JSON.parse(fs.readFileSync("model/storage.JSON"))
     console.log(removeThisPerson, "hej") 
-    console.log(userProfilesArray, "nej")
+    console.log(userProfilesArray, "hejhej")
 
     for (i = 0; i < userProfilesArray.length; i++){
         if (removeThisPerson.username === userProfilesArray[i].username){
@@ -156,7 +146,7 @@ app.delete('/deleteUser', (req, res)=> {
 
 
 /* 
-// forsøg på at opdatere en bruger fra editProfile siden. Virker ikke pt
+// forsøg på at opdatere en bruger fra editProfile siden. Virker ikke...
 app.post('/editProfile', (req, res) => {
     var userToEdit = req.body;
     console.log(userToEdit)
@@ -199,7 +189,7 @@ app.post('/editProfile', (req, res) => {
 // fjern match:
 // Overvej at lave et endpoint som sørger for at "currentuser", ligger i en JSON fil og bliver overwrited hver gang en ny bruger logger ind. 
 // På den måde kan man loope igennen likes.JSON, og sammenligne med om det passer med at (likes.json).likedPerson = (Den bruger der skal fjernes(dette sendes fra httpreq))
-// Når de er lig hinanden skal dette likes fjernes fra likes.JSON, med .splice(i, 1), og vi laver nu en fs.writefile, nu uden det like der er fjernet 
+// Når de er lig hinanden skal dette like fjernes fra likes.JSON, med .splice(i, 1), og vi laver nu en fs.writefile, nu uden det like, som er fjernet 
 
 
 // forsøg på delete request

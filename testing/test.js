@@ -1,4 +1,4 @@
-// Dette er mine forsøg på testing indtil videre. 
+// Dette er mine forsøg på testing med mocha og chai. Jeg har desværre ikke formået at teste med mocha og chai. 
 
 /*
 // forsøg på at benytte samme fremgangsmåde til at teste, som vi fik gennemgået i undervisningen. 

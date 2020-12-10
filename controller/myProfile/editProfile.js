@@ -1,3 +1,4 @@
+// Store dele af dette stykke kode er udarbejdet i samarbejde med studiegruppen. 
 // Viser hvilken bruger der er logget ind. Denne del er udarbejdet på egen hånd. 
 // Hvis der ikke er en bruger der er logget ind, sendes man til login siden.
 var areyouloggedin = localStorage.getItem("currentUser");
@@ -39,11 +40,10 @@ class updatedUser {
 
     
 
-
+// denne funktion er kun lavet som et forsøg på at vise, hvordan jeg ville opdatere en brugers informationer i systemet. 
+// funktionen virker, idet at den opdaterer localstorage key'en "currentUser". Problemet er at den skal opdatere dataen i JSON filen...
 function updateInfo(){
-
-
-    // Henter values som brugeren har indtastet 
+    // Henter det som brugeren har indtastet i inputfelterne. 
     username = document.getElementById("editUsername").value;
     phone = document.getElementById("editPhone").value;
     city = document.getElementById("editCity").value;
@@ -52,10 +52,8 @@ function updateInfo(){
     email = document.getElementById("editEmail").value;
     password = document.getElementById("editPassword").value;
     
-    // finder den eksisterende data fra currentUser i localstorage. 
+    // her finder jeg de eksisterende data i localstorage, om currentuser
     currentUser = JSON.parse(window.localStorage.getItem('currentUser'));
-   
-
 
     // Her ændres dataen i localstorage til at være den data som brugeren har tastet ind, da han/hun ændrede sin profil.
     currentUser["username"] = username;
@@ -68,17 +66,17 @@ function updateInfo(){
 
 
 
-    // Så gemmer jeg det i localstorage igen. 
+    // Dataen gemmes i localstorage igen
     window.localStorage.setItem('currentUser', JSON.stringify(currentUser));
-    // Og sender her brugeren tilbage til samme side, for at opdatere siden. 
+    // Og brugeren sendes tilbage til samme side, for at opdatere siden. 
     window.location = ("userProfile.html");
 
-    var updatesUser = JSON.parse(localStorage.getItem("User"));
 }
 
 
 /*
 // Edit in progress, post request for updating user info
+// Dette er et forsøg på at ændre dataen i JSON filen også. Dette er desværre ikke lykkedes. 
 
 document.addEventListener("DOMContentLoaded", function() {
     const xhr = new XMLHttpRequest();

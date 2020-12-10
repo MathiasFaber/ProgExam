@@ -1,22 +1,23 @@
-// DOM - kommenter på valget af måde for udførsel af DOM. Dynamisk.
-// variabel som henter userContainer fra HTMLfilen
+// Henter oneUsre fra html og gemmer den i en variabel. 
 var userContainer = document.getElementById('oneUser');
-console.log(userContainer)
 
 // Henter founduser fra localstorage, så vi ved hvilken person der er på skærmen.
+// Founduser er en key fra localstorage, som oprettes når brugeren trykker ind på en profil. 
+// den profil der trykkes på sendes til localstorage key "founduser"
 var user = JSON.parse(localStorage.getItem('founduser'));
 
-
-// Her laves en container, hvori den valgte bruger indsættes
+// laver en container, hvori brugerne skal indsættes/vises
 var container = document.createElement('container');
 
-// Her bliver de forskellige properties fra klassen udvalgt og kan displayes på siden
+// Her laves en klasse til den bruger som skal vises på siden. 
 container.className = "container";
 
-// Her viser vi navnet på den person brugeren har trykket ind på.  
-container.innerHTML += '<div class="matchName">' + user.username + '</div>';
+// Her viser jeg navnet på den person brugeren har trykket ind på.  
+container.innerHTML += '<div class="name"> Navn: ' + user.username + '</div>';
+container.innerHTML += '<div class="city"> By: ' + user.city + '</div>';
+container.innerHTML += '<div class="phone"> Telefonnummer: ' + user.phone + '</div>';
 
-// Her kunne man overveje at vise flere oplysninger om brugeren på siden
+// Her kunne man overveje at vise flere oplysninger om brugeren på siden, dette skal bestemt implementeres ved en videreudvikling af appen. 
 
 // Her bruges appendChild funktionen til at sætte container efter userContainer. 
 userContainer.appendChild(container);

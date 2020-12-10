@@ -44,16 +44,6 @@ h4 {
     
 }
 
-.leftSideBar {
-    width: 20px;
-    height: 40px;
-    height: 100%;
-    background-color: darkgrey;
-    display: inline-block;
-    border-style: solid;
-}
-
-
 
 .matchName {
     color: rgba(139, 0, 0, 0.705);
@@ -73,19 +63,11 @@ h4 {
     text-align: center;
     margin-bottom: 10%
 
- }
-.match_img {
-    width: 50%;
-    display: inline-block;
-    padding: 8%;
-    margin-left: 6%;
-    position: relative;
-    cursor: pointer;
-
 }
 
 
-/* CSS til øvre navigationsmenu */
+
+/* CSS til topbar */
 
 * {
     padding: 0;
@@ -97,7 +79,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-nav{
+nav {
     display: flex;
     justify-content: space-around;
     align-items: center;

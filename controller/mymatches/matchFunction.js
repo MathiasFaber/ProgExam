@@ -1,3 +1,5 @@
+// Store dele af dette stykke kode er udarbejdet i samarbejde med min studiegruppe
+
 // tjekker om brugeren er logged ind. Brugeren kan kun se siderne: matches, myMatches og My profile, hvis brugeren er logged in.
 var areyouloggedin = localStorage.getItem("currentUser");
 if (areyouloggedin == null){
@@ -13,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
        if(this.readyState === 4) {
            // her henter vi svaret fra serveren. dvs. listen over alle likes i systemet. 
           var findingMatches = this.response;
-          console.log(findingMatches)
+          console.log(findingMatches) // console.log bruges blot til at teste om vi får et svar fra serveren
 
           // Her tager vi fat i localstorage key'en currentUser, fordi vi i funktionen skal sammenligne den indlogede bruger med likesarrayet. 
           let currentUser = JSON.parse(localStorage.getItem("currentUser"))
@@ -40,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         // Her laves inline html. Det gøres for at kunne skabe html elementerne for hvert match en bruger har fået. 
                         let matchRowContents = `   
                             <div class="match-items match-column">
-                                <span class="match-name">${findingMatches[i].likedUser}</span>
+                                <span>${findingMatches[i].likedUser}</span>
                                         
                             </div>
                         
@@ -61,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         // Her laves eventlistener på remove match knappen (Remove match knappen virker ikke pt. da den kun fjerner matchet fra siden, ikke fra JSON.)
                         // matchRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeMatch);
 
-                        // Hvis brugeren har fået et match, får han/hun en notofikation om dette. 
+                        // Hvis brugeren har fået et match, får han/hun en notofikation om dette og brugeren vises på siden. 
                         alert ("It's a match!!!!!!!")        
                     } 
                 } 
@@ -121,7 +123,6 @@ function removeMatch(event){
 
 
     /*
-    console.log("hej")
     const xhr = new XMLHttpRequest();
     xhr.responseType = "json"
  

@@ -1,7 +1,8 @@
+// store dele af dette stykke kode er udarbejdet i samarbejde med min studiegruppe. 
 // tjekker om brugeren er logged ind. Brugeren kan kun se siderne: matches, myMatches og My profile, hvis brugeren er logged ind.
 var areyouloggedin = localStorage.getItem("currentUser");
 if (areyouloggedin == null){
-   // informere brugeren om at han/hun ikke er logged ind, brugeren sendes til login siden. 
+   // informere brugeren om at han/hun ikke er logget ind, brugeren sendes til login siden. 
     alert ("Please login, or create a user to login :-)")
     window.location.href = "../view/signIn.html";
 } else {
@@ -10,19 +11,17 @@ if (areyouloggedin == null){
       const xhr = new XMLHttpRequest();
       xhr.responseType = "json"
    
-      //henter usersContainer fra HTMLfilen 
+      // her henter jeg userContainer fra HTML-filen, for at kunne bruge den senere, når der skal laves de forskellige brugere der er i systemet. 
       var userContainer = document.getElementById('usersContainer');
    
       xhr.addEventListener("readystatechange", function() {
          if(this.readyState === 4) {
             var allUsers = this.response;
-            var thisUser = JSON.parse(localStorage.getItem('currentUser'))
-            console.log(thisUser.username)
-
-               // for-loop, som looper igennem alle brugere, og indsætter en html div for at hver bruger. 
+         
+               // Dette for loop, looper igennem alle brugerne i systemet, og laver en div til hver bruger
                for(var i=0; i < allUsers.length; i++){
                
-                  // Variabel som laver en div i html filen. 
+                  // Her laves omtalte div, for hver bruger
                   var users = document.createElement('div');
                
                   // Her bliver de forskellige properties fra klassen udvalgt og kan displayes på siden 
@@ -30,19 +29,14 @@ if (areyouloggedin == null){
                   
                   // displayer navne på oprettede brugere i matches.html 
                   users.innerHTML += '<div class="matchName" id='+allUsers[i].username+' onclick="oneUser('+allUsers[i].username+')">'+allUsers[i].username+'</div>';
-                  // displayer navnet på det eventuelle match 
                
-                  // tager Child af matchescontaine
+                  // For hver bruger laves et "child". Brugeren vises altså i forlængelse af forrige bruger.
                   userContainer.appendChild(users);
-
-                  
-
-                  }
-   
-                 
                }
+
+            }
                
-            })
+         })
    
          
       // Her spørger vi om at få den data som ligger i model/storage.JSON, så vi kan vise brugeren en liste over alle brugere i systemet.
