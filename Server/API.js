@@ -1,3 +1,5 @@
+// Flere af serverens endpointss, er lavet i tæt samarbejde med min studiegruppe. 
+
 // Dette er min server, med mine CRUD endpoints. 
 // Det er en node server, som kører på express pakken. 
 const express = require('express');

@@ -13,13 +13,16 @@ document.addEventListener("DOMContentLoaded", function() {
  
     xhr.addEventListener("readystatechange", function() {
        if(this.readyState === 4) {
-           // her henter vi svaret fra serveren. dvs. listen over alle likes i systemet. 
-          var findingMatches = this.response;
-          console.log(findingMatches) // console.log bruges blot til at teste om vi får et svar fra serveren
+        // her henter vi svaret fra serveren. dvs. listen over alle likes i systemet. 
+        var findingMatches = this.response;
 
+        // console.log bruges blot til at teste om vi får et svar fra serveren
+        // console.log er brugt igennem hele systemet, for at teste om diverse funktioner virker. 
+        // Jeg har dog slette disse tests for at rydde op i min kode. Dermed er koden ikke lige så rodet og forvirrende
+        console.log(findingMatches) 
           // Her tager vi fat i localstorage key'en currentUser, fordi vi i funktionen skal sammenligne den indlogede bruger med likesarrayet. 
-          let currentUser = JSON.parse(localStorage.getItem("currentUser"))
-            console.log(currentUser)
+        let currentUser = JSON.parse(localStorage.getItem("currentUser"))
+        console.log(currentUser)
         
             // for-loopet som tager arrayet og looper gennem matches
             for(var i=0; i< findingMatches.length; i++){

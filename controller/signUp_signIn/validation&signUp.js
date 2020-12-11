@@ -16,18 +16,6 @@ class User {
     }
 }
 
-// Her henter jeg brugerne fra localstorage
-if(localStorage.getItem("User") === null) {
-    var usersList = [];
-
-    // Her har jeg hardcodet en bruger til at ligge i localstorage. Det er gjort for at sikre at min funktion virker. 
-    // Hvis ikke der ligger nogle brugere i "users" i localstorage, kan vi ikke hente denne localstorage key, da den ikke eksisterer. 
-    usersList.push(new User("test", "code123", "12345678", "Greve", "2670", "Hej vej 123", "mail@mail.dk"))
-   
-    // det array jeg lige har pushet den hardcodede bruger ind i, gøres herunder til en string så den kan sendes til localstorage igen.
-    var userListString = JSON.stringify(usersList);
-    localStorage.setItem("User", userListString)
-}
 
 // herefter valideres samtlige felter ved oprettelse af en ny bruger 
 
@@ -180,18 +168,7 @@ function validateForm(){
 
 
         
-    // Derefter sendes den oprettede bruger ind i localstorage key'en "user"
-    var createdUser = JSON.parse(localStorage.getItem("User"));
-    console.log(createdUser);
-
-    //pusher den nye bruger ind i et array 
-    createdUser.push(new User (username, password, phone, city, zip, address, email));
-    console.log(createdUser);
-
-    // Den nye bruger laves til en string så den kan gemmes i localstorage. 
-    var newUserAdd = JSON.stringify(createdUser);
-    // Her tilføjes han/hun til local storage
-    localStorage.setItem("User", newUserAdd);
+    
     // Alerten herunder giver brugeren besked om de oplysninger han/hun har oprettet sin bruger med. (dem som laves fra linje 169 til 177)
     alert(detailsPreview);
     alert('New User has been created');

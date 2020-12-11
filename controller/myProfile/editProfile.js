@@ -10,8 +10,6 @@ if (areyouloggedin == null){
     var displayUser = document.createElement("P")
     var currentUsername = JSON.parse(localStorage.getItem("currentUser"))
     var thisUser = currentUsername.username
-    console.log(currentUsername)
-    console.log(thisUser)
 
     var textUser = document.createTextNode(thisUser)
 

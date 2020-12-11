@@ -1,4 +1,4 @@
-// udarbejdet i samarbejde med studiegruppe
+// egne forsøg på at slette en bruger fra JSON-filen
 // virker ikke!
 /*
 deleteUser = document.getElementById("deleteButton")

@@ -1,0 +1,124 @@
+commit 73b63ecd5ca3c2c046353d89008d9cce29554842
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Fri Dec 11 00:36:09 2020 +0100
+
+    Minor adjustments, commenting
+
+commit c5e40c9b7d632a11c2f8c7313bcb053d3cba2169
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Wed Dec 9 16:51:27 2020 +0100
+
+    many minor changes
+
+commit 9421217b3a1eaad644fbf7377a456fb9a9cca319
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Mon Dec 7 12:47:42 2020 +0100
+
+    Deleting unused documents + improving comments
+
+commit 2ad9338847154c2c865f06fa499f4276e318a32f
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Sun Dec 6 13:45:47 2020 +0100
+
+    Minor changes
+
+commit d2f827df0ba6481acbacb2d0cb9d6ad80559feb5
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Fri Dec 4 15:36:06 2020 +0100
+
+    hej
+
+commit 45c1926a6a8611726f0cdc4597983b17532e5010
+Merge: b61e2f1 8dabd7e
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Fri Dec 4 15:31:52 2020 +0100
+
+    Merge https://github.com/MathiasFaber/ProgExam into server
+
+commit b61e2f11f66dafd29e7cb25012ea3d10b47a85aa
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Fri Dec 4 15:27:23 2020 +0100
+
+    h
+
+commit 8dabd7ea94c071a97b8ac11b3f83c9be3ffcd017
+Merge: 40cb096 225efd2
+Author: MathiasFaber <72735376+MathiasFaber@users.noreply.github.com>
+Date:   Fri Dec 4 15:19:08 2020 +0100
+
+    Merge pull request #1 from MathiasFaber/testing
+    
+    Todays work
+
+commit 225efd22f9ac1d84a22fbb0b0f8f60d9fde9d6e2
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Fri Dec 4 15:07:54 2020 +0100
+
+    minor adjustments to the functionality
+
+commit 4eefd98e8fcd2e5faf64c3c1ecdb63774948f32c
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Fri Dec 4 08:56:20 2020 +0100
+
+    testing...
+
+commit 40cb09682498ef7f54c073e352b54e8d8b5bb0d4
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Thu Dec 3 22:47:45 2020 +0100
+
+    experimenting w mocha/chai and updating profile
+
+commit 110e22b030b0777e9f46153cb8af24d9068fefe1
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Thu Dec 3 14:55:08 2020 +0100
+
+    minor changes
+
+commit 60c543a19d87faa9a95ddc8012a340c360609016
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Wed Dec 2 16:38:05 2020 +0100
+
+    experimenting with deleting like from JSON-file
+
+commit 418602461cdec43a797817aeec35e6bf64c9c2a4
+Merge: 30ac1a2 394cd5e
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Mon Nov 30 23:37:03 2020 +0100
+
+    Merge branch 'server' of https://github.com/MathiasFaber/ProgExam into server
+
+commit 30ac1a2ec9949c1bad952732b3a80ccb569a2932
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Mon Nov 30 23:36:43 2020 +0100
+
+    thoughts on delete request
+
+commit 7dea89f51f237f2aba3c850db9c29c880bc059c7
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Mon Nov 30 23:33:40 2020 +0100
+
+    thoughts on delete request
+
+commit 394cd5e4b49119ddd473f80bca913b3418896d09
+Author: MathiasFaber <72735376+MathiasFaber@users.noreply.github.com>
+Date:   Mon Nov 30 23:22:19 2020 +0100
+
+    Create README.md
+
+commit f6a1618f4b5f16b5b13eeb9f5aa85c7f73f7ce51
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Mon Nov 30 23:13:07 2020 +0100
+
+    how to delete like from JSONfile? comments
+
+commit 9e40afecfc3cca8ed13aa9515f29e00d0f3ea153
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Mon Nov 30 16:38:29 2020 +0100
+
+    forsøg
+
+commit ea71a562b533d813ce3898f6a2a442e26bbb0eeb
+Author: MathiasFaber <makr20ah@student.cbs.dk>
+Date:   Mon Nov 30 16:22:42 2020 +0100
+
+    Working on server, moved files to different folder

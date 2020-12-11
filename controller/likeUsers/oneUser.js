@@ -1,3 +1,4 @@
+// Dele af dette stykke kode er udarbejdet i samarbejde med min studiegruppe
 // Henter oneUsre fra html og gemmer den i en variabel. 
 var userContainer = document.getElementById('oneUser');
 

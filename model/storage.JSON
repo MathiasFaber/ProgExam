@@ -7,7 +7,7 @@
     "address": "nn 34",
     "email": "hej@hejhej.dk",
     "password": "123"
-  }, 
+  },
   {
     "username": "Mathias",
     "phone": "12341234",
@@ -16,5 +16,14 @@
     "address": "hannemanns alle 44",
     "email": "hej@hejmeddig.dk",
     "password": "1234"
+  },
+  {
+    "username": "Bodil",
+    "phone": "60959434",
+    "city": "Greve",
+    "zip": "2322",
+    "address": "Donnergaards alle 205",
+    "email": "hej@hejhej.dk",
+    "password": "321"
   }
 ]
